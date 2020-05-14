@@ -1,0 +1,72 @@
+entity Candidate {
+	id Long
+    fullName String required unique maxlength(100)
+    email String required unique maxlength(100)
+ 	cvUrl String maxlength(100)
+}
+
+entity VacancyStatus {
+	id Long
+    status String required unique maxlength(100) 
+}
+
+entity ApplicationStatus {
+	id Long
+    status String required unique maxlength(100) 
+}
+
+entity Vacancy {
+	id Long
+    title String required unique maxlength(100)
+    description String maxlength(1000)
+    salary Integer
+    createdDate ZonedDateTime
+}
+
+entity Application {
+	id Long
+    applicationDate ZonedDateTime
+}
+
+entity Interview {
+	id Long
+    date ZonedDateTime
+}
+
+entity InterviewType {
+	id Long 
+    type String required maxlength(100)
+}
+
+entity Interviewer {
+	id Long
+    fullName String required unique maxlength(100)
+    email String unique maxlength(100)
+    position String maxlength(100)
+}
+
+entity InterviewResult {
+	id Long
+    description String maxlength(1000)
+}
+
+relationship ManyToMany {
+	Candidate{vacancies} to Vacancy{candidates}
+}
+
+relationship OneToOne {
+	Interview{result} to InterviewResult{interview}
+}
+
+relationship OneToMany {
+	Vacancy{status} to VacancyStatus
+    Application{status} to ApplicationStatus
+    Vacancy{applications} to Application{vacancy}
+    Candidate{interviews} to Interview{candidate}
+    Interview{type} to InterviewType
+    Interviewer{interviews} to Interview{interviewer}
+}
+
+filter Interview, Interviewer, Candidate, Vacancy 
+paginate Vacancy, Candidate, Interview, Interviewer with infinite-scroll
+service all with serviceImpl

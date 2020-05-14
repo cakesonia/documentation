@@ -1,0 +1,39 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.prychko.lab3"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "lab3",
+    "packageName": "com.prychko.lab3",
+    "packageFolder": "com/prychko/lab3",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MzI0NTEyOGFiZTFlZjkyZGMzODRjZTdmOTI0YThiZjAzMWRjMGJlNGU3OWY4NDAyOWJmYjU2OTIxY2FjYzI4ZmUzNWNlNTViODAyOTA1MTQ0ZWNkM2JkZWRhZjkwMzFlY2RkN2IzNjRiYWRiYTVjNjkzYTJiNzAyNzEyYzAzMDc=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "superhero",
+    "clientThemeVariant": "dark",
+    "creationTimestamp": 1589450479681,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
