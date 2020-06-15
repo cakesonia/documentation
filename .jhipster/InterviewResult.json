@@ -1,0 +1,33 @@
+{
+    "name": "InterviewResult",
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "1000"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "interview",
+            "otherEntityRelationshipName": "result",
+            "relationshipName": "interview",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200514102700",
+    "entityTableName": "interview_result",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

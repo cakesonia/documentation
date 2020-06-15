@@ -14,6 +14,21 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200514101900_added_entity_Candidate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200514102000_added_entity_VacancyStatus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200514102100_added_entity_ApplicationStatus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200514102200_added_entity_Vacancy.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200514102300_added_entity_Application.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200514102400_added_entity_Interview.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200514102500_added_entity_InterviewType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200514102600_added_entity_Interviewer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200514102700_added_entity_InterviewResult.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200514101900_added_entity_constraints_Candidate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200514102000_added_entity_constraints_VacancyStatus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200514102100_added_entity_constraints_ApplicationStatus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200514102300_added_entity_constraints_Application.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200514102400_added_entity_constraints_Interview.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200514102500_added_entity_constraints_InterviewType.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

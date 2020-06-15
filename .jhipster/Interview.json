@@ -1,0 +1,50 @@
+{
+    "name": "Interview",
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "interviewResult",
+            "otherEntityRelationshipName": "interview",
+            "relationshipName": "result",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "interviewType",
+            "otherEntityRelationshipName": "interview",
+            "relationshipName": "type"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "candidate",
+            "otherEntityRelationshipName": "interviews",
+            "relationshipName": "candidate",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "interviewer",
+            "otherEntityRelationshipName": "interviews",
+            "relationshipName": "interviewer",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200514102400",
+    "entityTableName": "interview",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

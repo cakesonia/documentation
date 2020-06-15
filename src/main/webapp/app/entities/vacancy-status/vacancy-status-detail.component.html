@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="vacancyStatus">
+            <h2><span>Vacancy Status</span> {{ vacancyStatus.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Status</span></dt>
+                <dd>
+                    <span>{{ vacancyStatus.status }}</span>
+                </dd>
+                <dt><span>Vacancy</span></dt>
+                <dd>
+                    <div *ngIf="vacancyStatus.vacancy">
+                        <a [routerLink]="['/vacancy', vacancyStatus.vacancy?.id, 'view']">{{ vacancyStatus.vacancy?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/vacancy-status', vacancyStatus.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

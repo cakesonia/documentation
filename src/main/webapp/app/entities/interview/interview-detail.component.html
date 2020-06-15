@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="interview">
+            <h2><span>Interview</span> {{ interview.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Date</span></dt>
+                <dd>
+                    <span>{{ interview.date }}</span>
+                </dd>
+                <dt><span>Result</span></dt>
+                <dd>
+                    <div *ngIf="interview.result">
+                        <a [routerLink]="['/interview-result', interview.result?.id, 'view']">{{ interview.result?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span>Candidate</span></dt>
+                <dd>
+                    <div *ngIf="interview.candidate">
+                        <a [routerLink]="['/candidate', interview.candidate?.id, 'view']">{{ interview.candidate?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span>Interviewer</span></dt>
+                <dd>
+                    <div *ngIf="interview.interviewer">
+                        <a [routerLink]="['/interviewer', interview.interviewer?.id, 'view']">{{ interview.interviewer?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/interview', interview.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

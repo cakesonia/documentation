@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="candidate">
+            <h2><span>Candidate</span> {{ candidate.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Full Name</span></dt>
+                <dd>
+                    <span>{{ candidate.fullName }}</span>
+                </dd>
+                <dt><span>Email</span></dt>
+                <dd>
+                    <span>{{ candidate.email }}</span>
+                </dd>
+                <dt><span>Cv Url</span></dt>
+                <dd>
+                    <span>{{ candidate.cvUrl }}</span>
+                </dd>
+                <dt><span>Vacancies</span></dt>
+                <dd>
+                    <span *ngFor="let vacancies of candidate.vacancies; let last = last">
+                        <a [routerLink]="['/vacancy', vacancies?.id, 'view']">{{ vacancies.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/candidate', candidate.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

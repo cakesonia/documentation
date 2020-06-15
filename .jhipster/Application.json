@@ -1,0 +1,35 @@
+{
+    "name": "Application",
+    "fields": [
+        {
+            "fieldName": "applicationDate",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "applicationStatus",
+            "otherEntityRelationshipName": "application",
+            "relationshipName": "status"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "vacancy",
+            "otherEntityRelationshipName": "applications",
+            "relationshipName": "vacancy",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200514102300",
+    "entityTableName": "application",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

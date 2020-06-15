@@ -1,0 +1,35 @@
+{
+    "name": "VacancyStatus",
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "100"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "vacancy",
+            "otherEntityRelationshipName": "status",
+            "relationshipName": "vacancy",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200514102000",
+    "entityTableName": "vacancy_status",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-interview-heading">Create or edit a Interview</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_date">Date</label>
+                    <div class="d-flex">
+                        <input id="field_date" type="datetime-local" class="form-control" name="date" formControlName="date" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_result">Result</label>
+                    <select class="form-control" id="field_result" name="result" formControlName="result">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="interviewResultOption.id === editForm.get('result')!.value?.id ? editForm.get('result')!.value : interviewResultOption" *ngFor="let interviewResultOption of results; trackBy: trackById">{{ interviewResultOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_candidate">Candidate</label>
+                    <select class="form-control" id="field_candidate" name="candidate" formControlName="candidate">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="candidateOption.id === editForm.get('candidate')!.value?.id ? editForm.get('candidate')!.value : candidateOption" *ngFor="let candidateOption of candidates; trackBy: trackById">{{ candidateOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_interviewer">Interviewer</label>
+                    <select class="form-control" id="field_interviewer" name="interviewer" formControlName="interviewer">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="interviewerOption.id === editForm.get('interviewer')!.value?.id ? editForm.get('interviewer')!.value : interviewerOption" *ngFor="let interviewerOption of interviewers; trackBy: trackById">{{ interviewerOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
