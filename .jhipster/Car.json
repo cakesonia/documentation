@@ -1,0 +1,54 @@
+{
+    "name": "Car",
+    "fields": [
+        {
+            "fieldName": "price",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "manufacturedYear",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "request",
+            "otherEntityRelationshipName": "car",
+            "relationshipName": "request",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "carType",
+            "otherEntityRelationshipName": "cars",
+            "relationshipName": "type",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "carBrand",
+            "otherEntityRelationshipName": "cars",
+            "relationshipName": "brand",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "autopark",
+            "otherEntityRelationshipName": "cars",
+            "relationshipName": "autopark",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200615175700",
+    "entityTableName": "car",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

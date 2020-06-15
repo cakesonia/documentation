@@ -1,0 +1,50 @@
+{
+    "name": "Rent",
+    "fields": [
+        {
+            "fieldName": "lendingDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "returningDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "rentStatus",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "fine",
+            "otherEntityRelationshipName": "rent",
+            "relationshipName": "fines"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "request",
+            "otherEntityRelationshipName": "rent",
+            "relationshipName": "request",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "client",
+            "otherEntityRelationshipName": "rents",
+            "relationshipName": "client",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200615175300",
+    "entityTableName": "rent",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

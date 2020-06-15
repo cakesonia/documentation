@@ -1,0 +1,39 @@
+{
+    "name": "Autopark",
+    "fields": [
+        {
+            "fieldName": "location",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "availableCars",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "car",
+            "otherEntityRelationshipName": "autopark",
+            "relationshipName": "cars"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "rentalPoint",
+            "otherEntityRelationshipName": "autopark",
+            "relationshipName": "rentalPoint",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200615175900",
+    "entityTableName": "autopark",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

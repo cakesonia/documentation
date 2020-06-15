@@ -1,0 +1,53 @@
+{
+    "name": "Request",
+    "fields": [
+        {
+            "fieldName": "registrationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "deliveryDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "requestStatus",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "rent",
+            "otherEntityRelationshipName": "request",
+            "relationshipName": "rent",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "car",
+            "otherEntityRelationshipName": "request",
+            "relationshipName": "car",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "client",
+            "otherEntityRelationshipName": "requests",
+            "relationshipName": "client",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200615175400",
+    "entityTableName": "request",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

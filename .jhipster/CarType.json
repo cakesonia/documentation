@@ -1,0 +1,28 @@
+{
+    "name": "CarType",
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "car",
+            "otherEntityRelationshipName": "type",
+            "relationshipName": "cars"
+        }
+    ],
+    "changelogDate": "20200615175600",
+    "entityTableName": "car_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,40 @@
+{
+    "name": "Fine",
+    "fields": [
+        {
+            "fieldName": "fineSize",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fineReason",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "client",
+            "otherEntityRelationshipName": "fines",
+            "relationshipName": "client",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "rent",
+            "otherEntityRelationshipName": "fines",
+            "relationshipName": "rent",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200615175500",
+    "entityTableName": "fine",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
