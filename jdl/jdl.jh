@@ -1,0 +1,78 @@
+entity Client {
+	id Long
+    fullName String required unique maxlength(100)
+    phone String pattern(/[0-9]{10}/) 
+ 	address String maxlength(100)
+}
+
+entity Rent {
+	id Long
+    lendingDate ZonedDateTime
+    returningDate ZonedDateTime
+    rentStatus String
+}
+
+entity Request {
+	id Long
+    registrationDate ZonedDateTime
+    deliveryDate ZonedDateTime
+    requestStatus String
+}
+
+entity Fine {
+	id Long
+    fineSize Integer
+    fineReason String
+}
+
+entity CarType {
+	id Long
+    status String
+}
+
+entity Car {
+	id Long
+    price Integer
+    manufacturedYear ZonedDateTime
+}
+
+entity CarBrand {
+	id Long
+	status String
+}
+
+entity Autopark {
+	id Long
+    location String
+    availableCars Integer
+}
+
+entity RentalPoint {
+	id Long
+    location String
+    worktime ZonedDateTime
+}
+
+relationship ManyToMany {
+    RentalPoint{clients} to Client{rentalPoints}
+}
+
+relationship OneToOne {
+	Request{rent} to Rent{request}
+    Request{car} to Car{request}
+    RentalPoint{autopark} to Autopark{rentalPoint}
+}
+
+relationship OneToMany {
+    Client{requests} to Request{client}
+    CarType{cars} to Car{type}
+    CarBrand{cars} to Car{brand}
+    Client{rents} to Rent{client}
+    Client{fines} to Fine{client}
+    Rent{fines} to Fine{rent}
+    Autopark{cars} to Car{autopark}
+}
+
+filter Client, RentalPoint, Car, Autopark 
+paginate Request, Car, Fine, Autopark, RentalPoint, Rent, Client with infinite-scroll
+service all with serviceImpl
